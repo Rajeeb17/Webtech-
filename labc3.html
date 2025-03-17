@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+    <link rel="icon" href="E:\8thsem\Webtech\logo.png" type="image/x-icon"> <!-- Add your favicon here -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container {
+            background-color: rgba(50, 169, 11, 0.86);
+            height: auto;
+            width: 250px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <img src="E:\8thsem\Webtech\logo.png" alt="logo" style="width: auto; height: auto;">
+    <h1 style="margin: auto;">color</h1>
+    <div class="flex-container">
+        <div class="column">
+            <div class="form-container">
+                <h2>GET REGISTERED</h2>
+                <form>
+                    <label for="fname">Full name:</label><br>                    
+                    <input type="text" id="fname" name="fname" value="John"><br>
+                </form>
+                <form>
+                    <label for="email">EMAIL:</label><br>
+                    <input type="text" id="email" name="email" value="ndjbds@dhf.com"><br>
+                </form>
+                <form>
+                    <label for="password">PASSWORD:</label><br>
+                    <input type="text" id="password" name="password" value="123456"><br>
+                </form>
+                <form>
+                    <label for="cpassword">CONFIRM PASSWORD:</label><br>
+                    <input type="text" id="cpassword" name="cpassword" value="123456"><br>
+                </form>
+                <form>
+                    <label for="dob">DOB:</label><br>
+                    <input type="text" id="dob" name="dob"><br>
+                </form>
+                <form>
+                    <label for="Country">Country:</label><br>
+                    <select id="Country" name="Country">
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                    </select><br>
+                </form>
+                <form>
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">I agree to the terms and conditions</label><br>
+                </form>
+                <form> 
+                    <label for="gender">Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                </form>
+            </div>
+            <div style="background-color: brown; height: 100px; width: 100px; margin: auto;"></div>
+        </div>
+        <div style="background-color: blueviolet; height: 300px; width: 150px;"></div>
+    </div>
+
+</body>
+</html>
