@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AQI INDEX</title>
-    <link rel="icon" href="E:\8thsem\Webtech\Webtech-\AQIFAVLOGO.png"type="image/x-icon"> 
+    <link rel="icon" href="../AQIFAVLOGO.png" type="image/x-icon"> 
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 200vh;
+            justify-content: flex-start; 
+            height: 100vh;
             margin: 0;
         }
         .flex-container {
             display: flex;
             align-items: center;
-            justify-content: center;
+        
         }
         .column {
             display: flex;
@@ -30,11 +30,21 @@
             width: 300px;
             padding: 20px;
             box-sizing: border-box;
+            color: white;
+        }
+        .login-container {
+            background-color: rgb(168, 44, 44);
+            height: auto;
+            width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
         }
     </style>
+    
 </head>
 <body>
-    <img src="E:\8thsem\Webtech\Webtech-\AQIFAVLOGO.png" alt="logo" style="width: 200px; height: 200px;">
+    <img src="AQIFAVLOGO.png" alt="logo" style="width: 40px; height: 40px;">
     <h1 style="margin: 10px;">AQI</h1>
     <div class="flex-container">
         <div class="column">
@@ -42,30 +52,30 @@
                 <h2>GET REGISTERED</h2>
                 <form id="registrationForm">
                     <label for="fname">Full Name:</label><br>
-                    <input type="text" id="fname" name="fname" placeholder="Enter your full name"><br>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your full name"style="width: 80%;"required><br>
 
                     <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" placeholder="Enter your email"><br>
+                    <input type="text" id="email" name="email" placeholder="Enter your email"style="width: 80%;"required><br>
 
                     <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+                    <input type="password" id="password" name="password" placeholder="Enter your password"style="width: 80%;"required><br>
 
                     <label for="cpassword">Confirm Password:</label><br>
-                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password"><br>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password"style="width: 80%;"required><br>
 
                     <label for="gender">Gender:</label><br>
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="male"required>
                     <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="female" name="gender" value="female"required>
                     <label for="female">Female</label><br>
-                    <input type="radio" id="other" name="gender" value="other">
+                    <input type="radio" id="other" name="gender" value="other"required>
                     <label for="other">Other</label><br>
 
                     <label for="dob">DOB:</label><br>
-                    <input type="date" id="dob" name="dob"><br>
+                    <input type="date" id="dob" name="dob"required><br>
 
                     <label for="Country">Country:</label><br>
-                    <select id="Country" name="Country">
+                    <select id="Country" name="Country"required>
                         <option value="">Select Country</option>
                         <option value="India">India</option>
                         <option value="USA">USA</option>
@@ -84,16 +94,16 @@
                         <option value="Spain">Spain</option>
                     </select><br>
 
-                    <input type="checkbox" id="terms" name="terms">
+                    <input type="checkbox" id="terms" name="terms"required>
                     <label for="terms">I agree to the terms and conditions</label><br>
 
                     <label for="opinion">Opinion:</label><br>
-                    <textarea id="opinion" name="opinion" rows="4" cols="20" placeholder="Write your opinion..."></textarea><br>
+                    <textarea id="opinion" name="opinion" rows="4" cols="20" placeholder="Write your opinion..."style="width: 80%;"></textarea><br>
 
                     <label for="bgcolor">Select Background Color:</label><br>
-                    <input type="color" id="bgcolor" name="bgcolor" value="#ffffff"><br>
+                    <input type="color" id="bgcolor" name="bgcolor" ><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit"required>
                 </form>
                 <script>
                     document.addEventListener('DOMContentLoaded', () => {
@@ -110,7 +120,7 @@
                             const gender = document.querySelector('input[name="gender"]:checked');
                             const country = document.getElementById('Country').value;
                             const terms = document.getElementById('terms').checked;
-                            const bgcolor = document.getElementById('bgcolor').value; // Optional field
+                            const bgcolor = document.getElementById('bgcolor').value; 
                 
                             let isValid = true;
                 
@@ -183,8 +193,8 @@
                                 isValid = false;
                             }
                 
-                            // Background Color (Optional)
-                            if (bgcolor) {
+                            // Background Color
+                            if (bgcolor && bgcolor !== '#000000') { // Replace '#000000' with the default color if different
                                 document.querySelector('.form-container').style.backgroundColor = bgcolor;
                             }
                 
@@ -198,9 +208,23 @@
                     });
                 </script>
             </div>
-            <div style="background-color: brown; height: 100px; width: 300px; margin: auto;"></div>
+            
+            <!--div style="background-color: brown; height: 200px; width: 300px; margin: auto; color: white;  "!-->
+            
+            <div class="login-container">
+                    <h2 style="text-align:center;">Login</h2>
+                <form id="loginForm">
+                     <label for="username"style=" ">Username:</label><br>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" style="width: 80%;"><br>
+            
+                    <label for="loginPassword">Password:</label><br>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter password" style="width: 80%;"><br>
+            
+                    <input type="submit" value="Log In" style="width: 35%; background-color: white; color: brown; border: none; cursor: pointer;"><br>
+                </form>
+            </div>
         </div>
-        <div style="background-color: blueviolet; height: 696px; width: 200px;"></div>
+        <div style="background-color: blueviolet; height: 801.5px; width: 300px;"></div>
     </div>
         </div>
     </div>
