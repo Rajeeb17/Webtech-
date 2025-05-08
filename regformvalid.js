@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registrationForm');
     const confirmButton = document.querySelector('input[value="submit"]');
 
-    // Add event listener for the submit button
-    submitButton.addEventListener('click', (event) => {
+    // Add event listener for the Confirm button
+    confirmButton.addEventListener('click', (event) => {
         // Prevent default form submission
         event.preventDefault();
 
