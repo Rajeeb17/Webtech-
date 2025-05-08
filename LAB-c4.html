@@ -16,29 +16,76 @@
         }
         .flex-container {
             display: flex;
-            align-items: center;
+            align-items: stretch; /* Ensures all child containers stretch to the same height */
         
         }
         .column {
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex: 1; /* Allows the column to grow and fill available space */
         }
         .form-container {
-            background-color: rgba(145, 21, 167, 0.86);
-            height: auto;
+            background-color: rgba(145, 21, 167, 0.86); /* Purple */
             width: 300px;
             padding: 20px;
             box-sizing: border-box;
             color: white;
+            flex: 1;
+        }
+.login-container {
+background-color: rgb(194, 63, 185); /* Pink */
+            width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            flex: 1;
+        }
+        .aqi-container {
+            background-color: rgb(150, 46, 210); /* Dark Purple */
+            width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            flex: 1;
         }
         .login-container {
-            background-color: rgb(194, 63, 185);
-            height: auto;
+            background-color: rgb(194, 63, 185); /* Pink */
             width: 300px;
             padding: 20px;
             box-sizing: border-box;
             color: white;
+            flex: 1;
+        }
+        .aqi-container {
+            background-color: rgb(150, 46, 210); /* Dark Purple */
+            width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            flex: 1;
+        }
+        .login-container {
+            background-color: rgb(194, 63, 185); /* Pink */
+            width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            flex: 1;
+        }
+        .aqi-container {
+            background-color: rgb(150, 46, 210); /* Dark Purple */
+            width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            flex: 1;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 0px;
+            display: block;
         }
     </style>
     
@@ -50,35 +97,94 @@
         <div class="column">
             <div class="form-container">
                 <h2>GET REGISTERED</h2>
-                <form id="registrationForm">
+                <form id="registrationForm" action="process.php" method="post">
                     <label for="fname">Full Name:</label><br>
-                    <input type="text" id="fname" name="fname" placeholder="Enter your full name"style="width: 80%;"required><br>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your full name" style="width: 80%;" required><br>
+                    <span class="error-message" id="fnameError"></span><br>
 
                     <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" placeholder="Enter your email"style="width: 80%;"required><br>
+                    <input type="text" id="email" name="email" placeholder="Enter your email" style="width: 80%;" required><br>
+                    <span class="error-message" id="emailError"></span><br>
 
                     <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" placeholder="Enter your password"style="width: 80%;"required><br>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" style="width: 80%;" required><br>
+                    <span class="error-message" id="passwordError"></span><br>
 
                     <label for="cpassword">Confirm Password:</label><br>
-                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password"style="width: 80%;"required><br>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password" style="width: 80%;" required><br>
+                    <span class="error-message" id="cpasswordError"></span><br>
 
                     <label for="gender">Gender:</label><br>
-                    <input type="radio" id="male" name="gender" value="male"required>
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female"required>
-                    <label for="female">Female</label><br>
-                    <input type="radio" id="other" name="gender" value="other"required>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" required>
                     <label for="other">Other</label><br>
+                    <span class="error-message" id="genderError"></span><br>
 
                     <label for="dob">DOB:</label><br>
-                    <input type="date" id="dob" name="dob"required><br>
+                    <input type="date" id="dob" name="dob" required><br>
+                    <span class="error-message" id="dobError"></span><br>
 
                     <label for="Country">Country:</label><br>
                     <select id="Country" name="Country" required>
                         <option value="">Select Country</option>
-                        <option value="Afghanistan">Afghanistan</option>
-                        <option value="Albania">Albania</option>
+                        <option value="Afghanistan">Ao<option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Eswatini">Eswatini</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
                         <option value="Algeria">Algeria</option>
                         <option value="Andorra">Andorra</option>
                         <option value="Angola">Angola</option>
@@ -134,6 +240,156 @@
                         <option value="Hungary">Hungary</option>
                         <option value="Iceland">Iceland</option>
                         <option value="India">India</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Eswatini">Eswatini</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <o<option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Namibia">Namibia</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="North Korea">North Korea</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Turkmenistan">Turkmenistan</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Vatican City">Vatican City</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                        <option value="United States">United States</option>
                         <option value="Indonesia">Indonesia</option>
                         <option value="Iran">Iran</option>
                         <option value="Iraq">Iraq</option>
@@ -219,6 +475,15 @@
                         <option value="Ukraine">Ukraine</option>
                         <option value="United Arab Emirates">United Arab Emirates</option>
                         <option value="United Kingdom">United Kingdom</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Vatican City">Vatican City</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
                         <option value="United States">United States</option>
                         <option value="Uruguay">Uruguay</option>
                         <option value="Uzbekistan">Uzbekistan</option>
@@ -230,128 +495,312 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select><br>
+                    <span class="error-message" id="countryError"></span><br>
 
-                    <input type="checkbox" id="terms" name="terms"required>
+                    <input type="checkbox" id="terms" name="terms" required>
                     <label for="terms">I agree to the terms and conditions</label><br>
+                    <span class="error-message" id="termsError"></span><br>
 
                     <label for="opinion">Opinion:</label><br>
-                    <textarea id="opinion" name="opinion" rows="4" cols="20" placeholder="Write your opinion..."style="width: 80%;"></textarea><br>
+                    <textarea id="opinion" name="opinion" rows="4" cols="20" placeholder="Write your opinion"></textarea><br>
 
                     <label for="bgcolor">Select Background Color:</label><br>
-                    <input type="color" id="bgcolor" name="bgcolor" ><br>
+                    <input type="color" id="bgcolor" name="bgcolor" value="#ffffff"><br>
 
-                    <input type="submit" value="Submit"required>
+                    <input type="submit" value="Submit" required><br>
+                    <input type="submit" value="Confirm" style="background-color: green; color: white; border: none; cursor: pointer;" formaction="process.php"><br>
                 </form>
                 <script>
                     document.addEventListener('DOMContentLoaded', () => {
                         const form = document.getElementById('registrationForm');
-                
-                        form.addEventListener('submit', (event) => {
-                            event.preventDefault(); // Prevent form submission
-                
-                            const fullName = document.getElementById('fname').value.trim();
-                            const email = document.getElementById('email').value.trim();
-                            const password = document.getElementById('password').value.trim();
-                            const confirmPassword = document.getElementById('cpassword').value.trim();
-                            const dob = document.getElementById('dob').value.trim();
-                            const gender = document.querySelector('input[name="gender"]:checked');
-                            const country = document.getElementById('Country').value;
-                            const terms = document.getElementById('terms').checked;
-                            const bgcolor = document.getElementById('bgcolor').value; 
-                
+                        const confirmButton = document.querySelector('input[value="Confirm"]');
+
+                        // Add event listener for the Confirm button
+                        confirmButton.addEventListener('click', (event) => {
+                            // Prevent default form submission
+                            event.preventDefault();
+
+                            // Validate the form
                             let isValid = true;
-                
-                            // Full Name Validation (Allow letters, dots, hyphens, and spaces)
-                            const nameRegex = /^[a-zA-Z.\-\s]+$/;
-                            if (!fullName) {
-                                alert('Please enter your full name.');
+
+                            // Clear previous error messages
+                            document.querySelectorAll('.error-message').forEach((span) => {
+                                span.textContent = '';
+                            });
+
+                            const fullName = document.getElementById('fname');
+                            const fullNameError = document.getElementById('fnameError');
+                            const fullNameRegex = /^[a-zA-Z\s.-]+$/; // Allows letters, spaces, hyphens, and dots
+                            if (!fullName.value.trim()) {
+                                fullNameError.textContent = 'Please enter your full name.';
                                 isValid = false;
-                            } else if (!nameRegex.test(fullName)) {
-                                alert('Full name can only contain letters, dots, hyphens, and spaces.');
-                                isValid = false;
-                            }
-                
-                            // Email Validation
-                            const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|hotmail\.com)$/;
-                            if (!email) {
-                                alert('Please enter your email.');
-                                isValid = false;
-                            } else if (!emailRegex.test(email)) {
-                                alert('Email must be a valid Gmail, Yahoo, or Hotmail address.');
-                                isValid = false;
-                            }
-                
-                            // Password Validation
-                            if (!password) {
-                                alert('Please enter a password.');
-                                isValid = false;
-                            } else if (password.length < 8) {
-                                alert('Password must be at least 8 characters long.');
-                                isValid = false;
-                            }
-                
-                            // Confirm Password Validation
-                            if (!confirmPassword) {
-                                alert('Please confirm your password.');
-                                isValid = false;
-                            } else if (password !== confirmPassword) {
-                                alert('Passwords do not match.');
-                                isValid = false;
-                            }
-                
-                            // DOB Validation
-                            if (!dob) {
-                                alert('Please select your date of birth.');
+                            } else if (!fullNameRegex.test(fullName.value.trim())) {
+                                fullNameError.textContent = 'Full name can only contain letters, spaces, hyphens, and dots.';
                                 isValid = false;
                             } else {
-                                const dobDate = new Date(dob);
-                                const age = new Date().getFullYear() - dobDate.getFullYear();
+                                fullNameError.textContent = '';
+                            }
+
+                            const email = document.getElementById('email');
+                            const emailError = document.getElementById('emailError');
+                            const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|hotmail\.com)$/;
+                            if (!email.value.trim()) {
+                                emailError.textContent = 'Please enter your email.';
+                                isValid = false;
+                            } else if (!emailRegex.test(email.value.trim())) {
+                                emailError.textContent = 'Email must be a valid Gmail, Yahoo, or Hotmail address.';
+                                isValid = false;
+                            }
+
+                            const password = document.getElementById('password');
+                            const passwordError = document.getElementById('passwordError');
+                            if (!password.value.trim()) {
+                                passwordError.textContent = 'Please enter a password.';
+                                isValid = false;
+                            } else if (password.value.trim().length < 8) {
+                                passwordError.textContent = 'Password must be at least 8 characters long.';
+                                isValid = false;
+                            }
+
+                            const confirmPassword = document.getElementById('cpassword');
+                            const confirmPasswordError = document.getElementById('cpasswordError');
+                            if (!confirmPassword.value.trim()) {
+                                confirmPasswordError.textContent = 'Please confirm your password.';
+                                isValid = false;
+                            } else if (confirmPassword.value.trim() !== password.value.trim()) {
+                                confirmPasswordError.textContent = 'Passwords do not match.';
+                                isValid = false;
+                            }
+
+                            const gender = document.querySelector('input[name="gender"]:checked');
+                            const genderError = document.getElementById('genderError');
+                            if (!gender) {
+                                genderError.textContent = 'Please select your gender.';
+                                isValid = false;
+                            }
+
+                            const dob = document.getElementById('dob');
+                            const dobError = document.getElementById('dobError');
+                            if (!dob.value.trim()) {
+                                dobError.textContent = 'Please select your date of birth.';
+                                isValid = false;
+                            } else {
+                                const dobDate = new Date(dob.value);
+                                const today = new Date();
+                                let age = today.getFullYear() - dobDate.getFullYear();
+                                const monthDiff = today.getMonth() - dobDate.getMonth();
+                                const dayDiff = today.getDate() - dobDate.getDate();
+                                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                                    age--;
+                                }
                                 if (age < 18) {
-                                    alert('You must be at least 18 years old.');
+                                    dobError.textContent = 'You must be at least 18 years old.';
                                     isValid = false;
                                 }
                             }
-                
-                            // Gender Validation
-                            if (!gender) {
-                                alert('Please select your gender.');
+
+                            const country = document.getElementById('Country');
+                            const countryError = document.getElementById('countryError');
+                            if (!country.value.trim()) {
+                                countryError.textContent = 'Please select your country.';
                                 isValid = false;
                             }
-                
-                            // Country Validation
-                            if (!country) {
-                                alert('Please select your country.');
+
+                            const terms = document.getElementById('terms');
+                            const termsError = document.getElementById('termsError');
+                            if (!terms.checked) {
+                                termsError.textContent = 'You must agree to the terms and conditions.';
                                 isValid = false;
                             }
-                
-                            // Terms and Conditions Validation
-                            if (!terms) {
-                                alert('You must agree to the terms and conditions.');
-                                isValid = false;
+
+                            // If the form is valid, reset the form and redirect to process.php
+                            if (isValid) {
+                                alert('Registration Successful!');
+                                form.submit(); // Actually submit the form to process.php
                             }
-                
-                            // Background Color
-                            if (bgcolor && bgcolor !== '#000000') { // Replace '#000000' with the default color if different
-                                document.querySelector('.form-container').style.backgroundColor = bgcolor;
-                            }
-                
-                            if (!isValid) {
-                                return;
-                            }
-                
-                            alert('Registration Successful!');
-                            form.reset();
                         });
+
+                        // Add event listeners to clear error messages dynamically
+                        const addInputListeners = () => {
+                            const fullName = document.getElementById('fname');
+                            const fullNameError = document.getElementById('fnameError');
+                            fullName.addEventListener('input', () => {
+                                if (fullName.value.trim()) {
+                                    fullNameError.textContent = '';
+                                }
+                            });
+
+                            const email = document.getElementById('email');
+                            const emailError = document.getElementById('emailError');
+                            email.addEventListener('input', () => {
+                                const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|hotmail\.com)$/;
+                                if (emailRegex.test(email.value.trim())) {
+                                    emailError.textContent = '';
+                                }
+                            });
+
+                            const password = document.getElementById('password');
+                            const passwordError = document.getElementById('passwordError');
+                            password.addEventListener('input', () => {
+                                if (password.value.trim().length >= 8) {
+                                    passwordError.textContent = '';
+                                }
+                            });
+
+                            const confirmPassword = document.getElementById('cpassword');
+                            const confirmPasswordError = document.getElementById('cpasswordError');
+                            confirmPassword.addEventListener('input', () => {
+                                if (confirmPassword.value.trim() === password.value.trim()) {
+                                    confirmPasswordError.textContent = '';
+                                }
+                            });
+
+                            const dob = document.getElementById('dob');
+                            const dobError = document.getElementById('dobError');
+                            dob.addEventListener('change', () => {
+                                const dobDate = new Date(dob.value);
+                                const today = new Date();
+                                let age = today.getFullYear() - dobDate.getFullYear();
+                                const monthDiff = today.getMonth() - dobDate.getMonth();
+                                const dayDiff = today.getDate() - dobDate.getDate();
+                                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                                    age--;
+                                }
+                                if (age >= 18) {
+                                    dobError.textContent = '';
+                                }
+                            });
+
+                            const country = document.getElementById('Country');
+                            const countryError = document.getElementById('countryError');
+                            country.addEventListener('change', () => {
+                                if (country.value.trim()) {
+                                    countryError.textContent = '';
+                                }
+                            });
+
+                            const terms = document.getElementById('terms');
+                            const termsError = document.getElementById('termsError');
+                            terms.addEventListener('change', () => {
+                                if (terms.checked) {
+                                    termsError.textContent = '';
+                                }
+                            });
+                        };
+
+                        addInputListeners();
+
+                        form.addEventListener('submit', (event) => {
+                            event.preventDefault(); // Prevent form submission
+
+                            let isValid = true;
+
+                            // Clear previous error messages
+                            document.querySelectorAll('.error-message').forEach((span) => {
+                                span.textContent = '';
+                            });
+
+                            // Full Name Validation
+                            const fullName = document.getElementById('fname');
+                            const fullNameError = document.getElementById('fnameError');
+                            if (!fullName.value.trim()) {
+                                fullNameError.textContent = 'Please enter your full name.';
+                                isValid = false;
+                            }
+
+                            // Email Validation
+                            const email = document.getElementById('email');
+                            const emailError = document.getElementById('emailError');
+                            const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|hotmail\.com)$/;
+                            if (!email.value.trim()) {
+                                emailError.textContent = 'Please enter your email.';
+                                isValid = false;
+                            } else if (!emailRegex.test(email.value.trim())) {
+                                emailError.textContent = 'Email must be a valid Gmail, Yahoo, or Hotmail address.';
+                                isValid = false;
+                            }
+
+                            // Password Validation
+                            const password = document.getElementById('password');
+                            const passwordError = document.getElementById('passwordError');
+                            if (!password.value.trim()) {
+                                passwordError.textContent = 'Please enter a password.';
+                                isValid = false;
+                            } else if (password.value.trim().length < 8) {
+                                passwordError.textContent = 'Password must be at least 8 characters long.';
+                                isValid = false;
+                            }
+
+                            // Confirm Password Validation
+                            const confirmPassword = document.getElementById('cpassword');
+                            const confirmPasswordError = document.getElementById('cpasswordError');
+                            if (!confirmPassword.value.trim()) {
+                                confirmPasswordError.textContent = 'Please confirm your password.';
+                                isValid = false;
+                            } else if (confirmPassword.value.trim() !== password.value.trim()) {
+                                confirmPasswordError.textContent = 'Passwords do not match.';
+                                isValid = false;
+                            }
+
+                            // Gender Validation
+                            const gender = document.querySelector('input[name="gender"]:checked');
+                            const genderError = document.getElementById('genderError');
+                            if (!gender) {
+                                genderError.textContent = 'Please select your gender.';
+                                isValid = false;
+                            }
+
+                            // DOB Validation
+                            const dob = document.getElementById('dob');
+                            const dobError = document.getElementById('dobError');
+                            if (!dob.value.trim()) {
+                                dobError.textContent = 'Please select your date of birth.';
+                                isValid = false;
+                            } else {
+                                const dobDate = new Date(dob.value);
+                                const today = new Date();
+                                let age = today.getFullYear() - dobDate.getFullYear();
+                                const monthDiff = today.getMonth() - dobDate.getMonth();
+                                const dayDiff = today.getDate() - dobDate.getDate();
+                                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                                    age--;
+                                }
+                                if (age < 18) {
+                                    dobError.textContent = 'You must be at least 18 years old.';
+                                    isValid = false;
+                                }
+                            }
+
+                            // Country Validation
+                            const country = document.getElementById('Country');
+                            const countryError = document.getElementById('countryError');
+                            if (!country.value.trim()) {
+                                countryError.textContent = 'Please select your country.';
+                                isValid = false;
+                            }
+
+                            // Terms and Conditions Validation
+                            const terms = document.getElementById('terms');
+                            const termsError = document.getElementById('termsError');
+                            if (!terms.checked) {
+                                termsError.textContent = 'You must agree to the terms and conditions.';
+                                isValid = false;
+                            }
+
+                            if (isValid) {
+                                alert('Registration Successful!');
+                                form.submit(); // Actually submit the form to process.php
+                            }
+                        });
+                        
                     });
                 </script>
             </div>
-            
-            <!--div style="background-color: brown; height: 200px; width: 300px; margin: auto; color: white;  "!-->
-            
+
             <div class="login-container">
-                    <h2 style="text-align:center;">Login</h2>
+                <h2 style="text-align:center;">LOGIN</h2>
                 <form id="loginForm">
-                     <label for="username"style=" ">Username:</label><br>
+                    <label for="username"style=" ">Username:</label><br>
                     <input type="text" id="username" name="username" placeholder="Enter your username" style="width: 80%;"><br>
             
                     <label for="loginPassword">Password:</label><br>
@@ -361,7 +810,8 @@
                 </form>
             </div>
         </div>
-        <div style="background-color: rgb(150, 46, 210); height: 801.38px; width: 300px; padding: 10px; box-sizing: border-box;">
+
+        <div class="aqi-container">
             <h2 style="text-align: center; color: white;">AQI INDEX</h2>
             <table id="aqiTable" style="width: 100%; color: white; text-align: center; border-collapse: collapse; border: 1px solid white;">
                 <thead>
@@ -415,9 +865,5 @@
             </table>
         </div>
     </div>
-        </div>
-    </div>
-
-   
 </body>
 </html>
