@@ -220,13 +220,13 @@
 
             <div class="login-container">
                 <h2 style="text-align:center;">LOGIN</h2>
-                <form id="loginForm">
-                    <label for="username"style=" ">Username:</label><br>
+                <form id="loginForm" method="post" action="login.php">
+                    <label for="username">Username:</label><br>
                     <input type="text" id="username" name="username" placeholder="Enter your username or email" style="width: 80%;"><br>
-            
+
                     <label for="loginPassword">Password:</label><br>
                     <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter password" style="width: 80%;"><br>
-            
+
                     <input type="submit" value="Log In" style="width: 35%; background-color: white; border: none; cursor: pointer;"><br>
                 </form>
             </div>
