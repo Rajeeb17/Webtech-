@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fullNameError.textContent = 'Please enter your full name.';
             isValid = false;
         } else if (!fullNameRegex.test(fullName.value.trim())) {
-            fullNameError.textContent = 'Full name can only contain letters, spaces, hyphens, and dots.';
+            fullNameError.textContent = 'only contain letters, spaces, hyphens, and dots.';
             isValid = false;
         } else {
             fullNameError.textContent = '';
