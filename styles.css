@@ -47,7 +47,8 @@ body {
 }
 
 .error-message {
-    color: red;
+    color: rgb(226, 56, 56);
     font-size: 12px;
-    display: block;
+    
+    /*display: block;*/
 }
