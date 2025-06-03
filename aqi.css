@@ -1,6 +1,6 @@
 /* General styles for the AQI container */
 .aqi-container {
-    background-color: rgb(150, 46, 210); /* Dark Purple */
+    background-color: #38b2ac; /* teal */
     width: 300px; 
     padding: 20px;
     box-sizing: border-box;
