@@ -57,7 +57,7 @@ $bgcolor = isset($_COOKIE['aqi_bgcolor']) ? $_COOKIE['aqi_bgcolor'] : '#ffffff';
             echo "<h3>Welcome, " . htmlspecialchars($_SESSION['user']['Name']) . 
             " <a href='logout.php' style='font-size:14px; color:red; text-decoration:none;'>LOGOUT</a></h3>";
         } else {
-            header("Location: nindex.html#login");
+            header("Location: nindex.html");
             exit();
         } ?>
         <h2>Selected Countries AQI Information</h2>
