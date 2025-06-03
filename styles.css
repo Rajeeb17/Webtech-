@@ -16,11 +16,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1; /* Allows the column to grow and fill available space */
+    flex: 1; /* Allows the column to grow and fill available space*/ 
 }
 
 .form-container {
-    background-color: rgba(145, 21, 167, 0.86); /* Purple */
+    background-color: #4c51bf; /* indigo */
     width: 300px;
     padding: 10px;
     box-sizing: border-box;
@@ -29,7 +29,7 @@ body {
 }
 
 .login-container {
-    background-color: rgb(194, 63, 185); /* Pink */
+    background-color: #818cf8; /* lighter indigo */
     width: 300px;
     padding: 10px;
     box-sizing: border-box;
@@ -38,7 +38,7 @@ body {
 }
 
 .aqi-container {
-    background-color: rgb(150, 46, 210); /* Dark Purple */
+    background-color: #38b2ac; /* teal */
     width: 300px;
     padding: 10px;
     box-sizing: border-box;
@@ -52,3 +52,4 @@ body {
     
     /*display: block;*/
 }
+
