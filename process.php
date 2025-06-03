@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-// Database connection (update with your DB credentials)
+// Database connection 
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "aqi"; // Change to your actual DB name
+$dbname = "aqi"; //  DB name
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
@@ -42,24 +42,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['final_submit'])) {
         }
 
         // Register user in the database
-        $stmt = $conn->prepare("INSERT INTO user (Name, Email, Gender, Dob, Country, Opinion) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO user (Name, Email, Gender, Dob, Country, Opinion,password) VALUES (?, ?, ?, ?, ?, ?,?)");
         if (!$stmt) {
             die("Prepare failed: " . $conn->error);
         }
         $stmt->bind_param(
-            "ssssss",
-            $data['fname'],      // This is the value from your form for Name
+            "sssssss",
+            $data['fname'],      //  Name
             $data['email'],
             $data['gender'],
             $data['dob'],
             $data['Country'],
-            $data['opinion']
+            $data['opinion'],
+             $data['cpassword']
         );
         if ($stmt->execute()) {
             unset($_SESSION['form_data']);
-            // Redirect to request.php after successful registration
+            // Redirect to nindex.html (login section) after successful registration
             session_write_close();
-            header("Location: request.php");
+            header("Location: nindex.html"); // #login if have an anchor for the login section
             exit();
         } else {
             echo "<p style='color:red;'>Error saving registration: " . htmlspecialchars($stmt->error) . "</p>";
