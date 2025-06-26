@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel reservation</title>
+   <link rel="icon" href="windhotel.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="windhotel.png" alt="logo" style="width: 70px; height: 70px;">
+    <h1 style="margin: 10px;">HOTEL RESERVATION</h1>
+    <div class="flex-container">
+        <div class="column">
+            <div class="form-container" id="registerContainer">
+                <h2>GET REGISTERED</h2>
+                <form id="registrationForm" action="process.php" method="post">
+                    <!-- Registration fields as before -->
+                    <label for="fname">Full Name:</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your full name" style="width: 80%;" required><br>
+                    <span class="error-message" id="fnameError"></span><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" placeholder="Enter your email" style="width: 80%;" required><br>
+                    <span class="error-message" id="emailError"></span><br>
+
+                    <label for="nid">NID:</label><br>
+                    <input type="number" id="nid" name="nid" placeholder="Enter your NID" required min="1" step="1" style="width: 80%;"><br>
+                    <span class="error-message" id="nidError"></span><br>
+
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" style="width: 80%;" required><br>
+                    <span class="error-message" id="passwordError"></span><br>
+
+                    <label for="cpassword">Confirm Password:</label><br>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password" style="width: 80%;" required><br>
+                    <span class="error-message" id="cpasswordError"></span><br>
+
+                    <label for="gender">Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                    <span class="error-message" id="genderError"></span><br>
+
+                    <label for="dob">DOB:</label><br>
+                    <input type="date" id="dob" name="dob" style="width: 80%;" required><br>
+                    <span class="error-message" id="dobError"></span><br>
+
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions</label><br>
+                    <span class="error-message" id="termsError"></span>
+
+                    <label for="opinion">Opinion:</label><br>
+                    <textarea id="opinion" name="opinion" rows="2" cols="40" placeholder="Write your opinion" style="width: 80%;"></textarea><br>
+<!--   
+                    <label for="bgcolor">Select Background Color:</label><br>
+                    <input type="color" id="bgcolor" name="bgcolor" value="#ffffff" style="width: 80%;"><br>
+ -->
+                    <input type="submit" value="submit"><br>
+                    <span>
+                        or <a href="login.php" id="showLoginLink">Login</a>
+                    </span>
+                </form>
+                <script src="regformval.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
