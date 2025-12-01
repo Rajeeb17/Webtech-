@@ -1,0 +1,52 @@
+/* General styles for the AQI container */
+.aqi-container {
+    background-color: #38b2ac; /* teal */
+    width: 300px; 
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    /*border-radius: 10px;*/ /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+    flex: 1;
+}
+
+/* Table styles */
+#aqiTable {
+    width: 100%;
+    color: white;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid white;
+    margin-top: 10px;
+    filter: blur(3px); /* Add this line to blur the table */
+   /* pointer-events: none; /* Prevent user interaction */
+   /* user-select: none; /* Prevent text selection */
+  
+}
+
+#aqiTable th {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent header */
+    padding: 10px;
+    border: 1px solid white;
+    font-weight: bold;
+}
+
+#aqiTable td {
+    padding: 8px;
+    border: 1px solid white;
+}
+
+/* Hover effect for table rows */
+#aqiTable tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+}
+
+/* Heading styles */
+.aqi-container h2 {
+text-align: center;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
