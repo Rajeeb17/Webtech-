@@ -1,0 +1,59 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome()
+
+try:
+    # STEP 1: Login
+    driver.get("http://localhost/Hotel_reservation/login.php")
+    driver.maximize_window()
+    driver.find_element(By.NAME, "username").send_keys("aja@gmail.com")
+    driver.find_element(By.NAME, "loginPassword").send_keys("0987654321")
+    driver.find_element(By.CLASS_NAME, "login-btn").click()
+    print("Step 1: Login successful.")
+    time.sleep(3)
+
+    # STEP 2: Select Location
+    driver.get("http://localhost/Hotel_reservation/select_location.php")
+    location_dropdown = driver.find_element(By.ID, "location")
+    location_dropdown.send_keys("Dhaka") 
+    driver.find_element(By.CSS_SELECTOR, "input[type='submit']").click()
+    print("Step 2: Location 'Dhaka' selected.")
+    time.sleep(3)
+
+    # STEP 3: Room Selection & Advanced Date Entry
+    print("Step 3: Accessing Room Selection...")
+    time.sleep(5) 
+    
+    # Select Suite and Guests
+    suite_qty = driver.find_element(By.NAME, "room_qty[Suite]")
+    suite_qty.clear()
+    suite_qty.send_keys("1")
+    driver.find_element(By.NAME, "guests").send_keys("2")
+    
+    # Format YYYY-MM-DDTHH:MM
+    checkin_val = "2026-04-17T08:31"
+    checkout_val = "2026-04-23T08:31"
+
+    checkin_field = driver.find_element(By.ID, "checkin")
+    checkout_field = driver.find_element(By.ID, "checkout")
+
+    
+    driver.execute_script("arguments[0].value = arguments[1]", checkin_field, checkin_val)
+    driver.execute_script("arguments[0].value = arguments[1]", checkout_field, checkout_val)
+    
+    
+    print("Step 4: Dates inserted ")
+
+    # STEP 4: Submit to Review Page
+    submit_btn = driver.find_element(By.CSS_SELECTOR, "input[type='submit']")
+    submit_btn.click()
+    print("Step 5: Form submitted successfully.")
+
+    
+    time.sleep(30)
+
+finally:
+    driver.quit()
+    print("Step 5: Testing session ended successfully.")

@@ -1,0 +1,38 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+# 1. Start the Chrome Browser
+driver = webdriver.Chrome()
+
+try:
+    # 2. Navigate to your Localhost Login Page
+    driver.get("http://localhost/Hotel_reservation/login.php")
+    driver.maximize_window()
+    print("Step 1: Hotel Reservation Login Page opened.")
+
+    # 3. Wait for the page to load fully
+    time.sleep(2)
+
+    # 4. Find elements using the 'name' attribute from your PHP code
+    # This matches: <input name="username"> and <input name="loginPassword">
+    user_input = driver.find_element(By.NAME, "username")
+    pass_input = driver.find_element(By.NAME, "loginPassword")
+    login_btn = driver.find_element(By.CLASS_NAME, "login-btn")
+
+    # 5. Automated Data Entry
+    # Using your Student ID as proof of your work
+    user_input.send_keys("21-45445-3_Respawn")
+    pass_input.send_keys("SQAT_Success_2026")
+    print("Step 2: Credentials entered successfully.")
+
+    # 6. Final Pause (Take your report screenshot here!)
+    time.sleep(5) 
+    
+    # 7. Optional: Uncomment the next line to actually click the button
+    # login_btn.click()
+
+finally:
+    # 8. Ending processes (Required by Assignment)
+    driver.quit()
+    print("Step 3: Test completed. Browser closed.")
